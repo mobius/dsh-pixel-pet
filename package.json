@@ -1,0 +1,54 @@
+{
+  "name": "dsh-pixel-pet",
+  "version": "0.1.1",
+  "description": "A floating pixel big-head desktop pet for the DeepSeek Harness web surface: the character tier follows the 6-level performance slider (01-06), the animation state follows the live conversation execution state (rest/idle/work/wait/done).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.pet.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.pet.js",
+    "cordis.patch.yml",
+    "assets/gifs",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobius/dsh-pixel-pet.git"
+  },
+  "homepage": "https://github.com/mobius/dsh-pixel-pet#readme",
+  "bugs": {
+    "url": "https://github.com/mobius/dsh-pixel-pet/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek",
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "desktop-pet",
+    "pixel"
+  ]
+}
