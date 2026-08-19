@@ -1,7 +1,7 @@
 {
   "name": "dsh-pixel-liangzu",
-  "version": "0.2.0",
-  "description": "A floating pixel big-head desktop pet for the DeepSeek Harness web surface: the character tier follows the 6-level performance slider (01-06), the animation state follows the live conversation execution state (rest/idle/work/wait/done).",
+  "version": "0.2.1",
+  "description": "像素大头桌面宠物：角色跟随 6 档性能滑杆，动作跟随对话执行状态。 / Pixel desktop pet for DeepSeek Harness.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {

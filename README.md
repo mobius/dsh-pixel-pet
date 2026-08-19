@@ -1,10 +1,12 @@
 # dsh-pixel-liangzu
 
-一个 DeepSeek Harness（`dsh web` / `dsh-desktop`）的**像素大头桌面宠物**插件。
+**中文：** DeepSeek Harness（`dsh web` / `dsh-desktop`）的像素大头桌面宠物。角色档位跟随 6 档性能滑杆，动作状态跟随对话执行（待机 / 休息 / 工作 / 等待 / 完成），可拖动。
+
+**English:** A floating pixel desktop pet for DeepSeek Harness. Character tier follows the 6-level performance slider; animation follows conversation state.
 
 > 曾用名 `dsh-pixel-pet`。为避免 dsh.so 上与其他同名仓库撞 slug，已更名为 `dsh-pixel-liangzu`。安装请用新包名。
 
-![像素宠物预览：Lv.6 冕冠帝王 · 工作状态，悬浮在右下角](assets/screenshot.png)
+![像素宠物预览：Lv.6 冕冠帝王 · 工作状态，悬浮在右下角](https://raw.githubusercontent.com/mobius/dsh-pixel-liangzu/main/assets/screenshot.png)
 
 | Lv.1 | Lv.2 | Lv.3 | Lv.4 | Lv.5 | Lv.6 |
 |------|------|------|------|------|------|
