@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * Install dsh-pixel-pet into the default dsh web profile.
+ * Install dsh-pixel-liangzu into the default dsh web profile.
  *
  * Equivalent manual steps:
  *   cd ~/.dsh/profiles/web
@@ -23,7 +23,7 @@ const profileDir = path.join(dshHome, 'profiles', 'web');
 const patchPath = path.join(profileDir, 'cordis.patch.yml');
 
 function fail(message) {
-  console.error(`[dsh-pixel-pet] ${message}`);
+  console.error(`[dsh-pixel-liangzu] ${message}`);
   process.exitCode = 1;
 }
 
@@ -36,10 +36,12 @@ if (!existsSync(path.join(profileDir, 'package.json'))) {
 const pnpm = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
 // Drop a previous installed copy first; pnpm file: deps can otherwise keep
 // stale files from an earlier package layout around.
-spawnSync(pnpm, ['--dir', profileDir, 'remove', 'dsh-pixel-pet'], {
-  stdio: 'ignore',
-  env: process.env,
-});
+for (const oldName of ['dsh-pixel-liangzu', 'dsh-pixel-pet']) {
+  spawnSync(pnpm, ['--dir', profileDir, 'remove', oldName], {
+    stdio: 'ignore',
+    env: process.env,
+  });
+}
 const add = spawnSync(pnpm, ['--dir', profileDir, 'add', `file:${pluginDir}`], {
   stdio: 'inherit',
   env: process.env,
@@ -60,8 +62,8 @@ if (add.status !== 0) {
 
 const patchEntry = [
   '- insert:',
-  '    - id: dsh-pixel-pet',
-  '      name: dsh-pixel-pet',
+  '    - id: dsh-pixel-liangzu',
+  '      name: dsh-pixel-liangzu',
   '',
 ].join('\n');
 
@@ -73,7 +75,14 @@ if (existsSync(patchPath)) {
   patch = '';
 }
 
-if (!patch.includes('name: dsh-pixel-pet')) {
+if (patch.includes('name: dsh-pixel-pet') && !patch.includes('name: dsh-pixel-liangzu')) {
+  patch = patch.replace(/id: dsh-pixel-pet/g, 'id: dsh-pixel-liangzu');
+  patch = patch.replace(/name: dsh-pixel-pet/g, 'name: dsh-pixel-liangzu');
+  writeFileSync(patchPath, patch, 'utf8');
+  console.log(`[dsh-pixel-liangzu] renamed profile row in ${patchPath}`);
+}
+
+if (!patch.includes('name: dsh-pixel-liangzu')) {
   const emptyArrayMatch = /^\[\]\s*$/m.exec(patch);
   if (emptyArrayMatch) {
     // Initial profile file: replace the standalone `[]` line with the insert entry.
@@ -83,9 +92,9 @@ if (!patch.includes('name: dsh-pixel-pet')) {
     patch += (patch ? '\n\n' : '') + patchEntry;
   }
   writeFileSync(patchPath, patch, 'utf8');
-  console.log(`[dsh-pixel-pet] patched ${patchPath}`);
+  console.log(`[dsh-pixel-liangzu] patched ${patchPath}`);
 } else {
-  console.log(`[dsh-pixel-pet] ${patchPath} already contains the row`);
+  console.log(`[dsh-pixel-liangzu] ${patchPath} already contains the row`);
 }
 
-console.log('[dsh-pixel-pet] installed. Restart dsh web to load the pet.');
+console.log('[dsh-pixel-liangzu] installed. Restart dsh web to load the pet.');

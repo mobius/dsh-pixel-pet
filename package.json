@@ -1,6 +1,6 @@
 {
-  "name": "dsh-pixel-pet",
-  "version": "0.1.1",
+  "name": "dsh-pixel-liangzu",
+  "version": "0.2.0",
   "description": "A floating pixel big-head desktop pet for the DeepSeek Harness web surface: the character tier follows the 6-level performance slider (01-06), the animation state follows the live conversation execution state (rest/idle/work/wait/done).",
   "type": "module",
   "main": "lib/index.js",
@@ -20,11 +20,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mobius/dsh-pixel-pet.git"
+    "url": "git+https://github.com/mobius/dsh-pixel-liangzu.git"
   },
-  "homepage": "https://github.com/mobius/dsh-pixel-pet#readme",
+  "homepage": "https://github.com/mobius/dsh-pixel-liangzu#readme",
   "bugs": {
-    "url": "https://github.com/mobius/dsh-pixel-pet/issues"
+    "url": "https://github.com/mobius/dsh-pixel-liangzu/issues"
   },
   "dsh": {
     "bundle": {

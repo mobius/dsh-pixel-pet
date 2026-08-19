@@ -1,6 +1,8 @@
-# dsh-pixel-pet
+# dsh-pixel-liangzu
 
 一个 DeepSeek Harness（`dsh web` / `dsh-desktop`）的**像素大头桌面宠物**插件。
+
+> 曾用名 `dsh-pixel-pet`。为避免 dsh.so 上与其他同名仓库撞 slug，已更名为 `dsh-pixel-liangzu`。安装请用新包名。
 
 ![像素宠物预览：Lv.6 冕冠帝王 · 工作状态，悬浮在右下角](assets/screenshot.png)
 
@@ -9,7 +11,7 @@
 | ![01](assets/gifs/01_idle.gif) | ![02](assets/gifs/02_idle.gif) | ![03](assets/gifs/03_idle.gif) | ![04](assets/gifs/04_idle.gif) | ![05](assets/gifs/05_idle.gif) | ![06](assets/gifs/06_idle.gif) |
 
 宠物本体是 `gifs/` 里的 30 张 2 帧循环像素大头 GIF（6 档角色 × 5 种动作状态），
-由插件 host 侧从 `/plugins/dsh-pixel-pet/gifs/…` 提供，悬浮在 Harness 界面右下角。
+由插件 host 侧从 `/plugins/dsh-pixel-liangzu/gifs/…` 提供，悬浮在 Harness 界面右下角。
 
 ## 两条对齐规则
 
@@ -51,15 +53,15 @@
 点击宠物可查看详情弹层（等级、角色、档位、状态、会话、执行中、等待交互、最近错误）。
 
 **拖动**：按住宠物（卡片区域）即可把它拖到屏幕任意位置，松手后位置写入
-`localStorage["dsh-pixel-pet.position.v1"]`，下次打开自动恢复；窗口缩放时会
+`localStorage["dsh-pixel-liangzu.position.v1"]`，下次打开自动恢复；窗口缩放时会
 自动夹回可视区域内。拖动与点击（查看详情）自动区分，不会误触。
 
 ## 目录结构
 
 ```
-dsh-pixel-pet/
+dsh-pixel-liangzu/
 ├── lib/
-│   ├── index.js          # DSH host 侧插件入口，托管 /plugins/dsh-pixel-pet/gifs 图片
+│   ├── index.js          # DSH host 侧插件入口，托管 /plugins/dsh-pixel-liangzu/gifs 图片
 │   └── client.pet.js     # DSH browser 侧插件：悬浮宠物 + 等级/状态对齐
 ├── assets/
 │   ├── screenshot.png    # README 预览截图
@@ -80,11 +82,11 @@ dsh-pixel-pet/
 
 ```sh
 # 推荐：从 GitHub 安装（dsh.so / registry 同款）
-dsh plugin --profile web add github:mobius/dsh-pixel-pet
+dsh plugin --profile web add github:mobius/dsh-pixel-liangzu
 
 # 本地克隆后安装
-git clone https://github.com/mobius/dsh-pixel-pet.git
-cd dsh-pixel-pet
+git clone https://github.com/mobius/dsh-pixel-liangzu.git
+cd dsh-pixel-liangzu
 node scripts/install.mjs
 # 或
 dsh plugin --profile web add "file:$(pwd)"
@@ -99,11 +101,11 @@ dsh plugin --profile web add "file:$(pwd)"
 
 ```sh
 cd ~/.dsh/profiles/web
-pnpm remove dsh-pixel-pet
+pnpm remove dsh-pixel-liangzu
 ```
 
 并从 `~/.dsh/profiles/web/cordis.patch.yml` 中删除
-`- insert: ... name: dsh-pixel-pet ...` 整段。
+`- insert: ... name: dsh-pixel-liangzu ...` 整段。
 
 ## 快速预览
 
@@ -128,5 +130,5 @@ node scripts/check.mjs
 仓库已声明 `dsh.bundle` + `dsh.client`，许可证 MIT。在 https://www.dsh.so/submit/ 粘贴：
 
 ```
-https://github.com/mobius/dsh-pixel-pet
+https://github.com/mobius/dsh-pixel-liangzu
 ```

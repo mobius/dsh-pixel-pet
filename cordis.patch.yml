@@ -1,5 +1,5 @@
 # Applied when this package is listed in a profile's `dsh.profile.bundles`
 # (`dsh plugin --profile web add …` does that automatically).
 - insert:
-    - id: dsh-pixel-pet
-      name: dsh-pixel-pet
+    - id: dsh-pixel-liangzu
+      name: dsh-pixel-liangzu
